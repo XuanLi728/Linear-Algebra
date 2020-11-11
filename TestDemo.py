@@ -13,6 +13,8 @@ per = permutations(range(3), 3) # n!
 
 Permutation_matrix = [ Identity_matrix[i,:] for i in per ]  # 置换矩阵
 
+
+# 性质 1
 for Matrix in Permutation_matrix:
 
     print("Matrix : \n",Matrix)
@@ -25,4 +27,20 @@ for Matrix in Permutation_matrix:
     print("After:  \n", Row_Change_Matrix)
 
     print("------------------")
+
+# 性质 2 与 3
+
+Matrix2 = Permutation_matrix[2]
+
+print("Matrix: \n", Matrix)
+print("Matrix2: \n",Matrix2)
+
+print("----------------")
+
+Matrix3 = np.dot(Matrix2, Matrix)
+
+print("PP => P \n", Matrix3)
+
+print("PP_T = I \n", np.dot(Matrix3, Matrix3.T))
+
 
